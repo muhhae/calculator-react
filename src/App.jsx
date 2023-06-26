@@ -28,16 +28,19 @@ function App() {
     setResult(eval(input.slice(0, -1)));
   }
 
-  const op = ["+", "-", "*", "/", ".", "%"]
 
   let numBtn = []
   for (let i = 1; i < 10; i++) {
     numBtn.push(<InputButton id={i} txt={i} buttonHandler={buttonHandler} />)
   }
   numBtn.push(
-    <InputButton id={0} txt={0} buttonHandler={buttonHandler} colSpan={3} />
+    <div></div>
+  )
+  numBtn.push(
+    <InputButton id={0} txt={0} buttonHandler={buttonHandler} colSpan={1} />
   )
 
+  const op = ["+", "-", "*", "/", ".", "%"]
   let opBtn = op.map(e => <InputButton id={e} txt={e} buttonHandler={buttonHandler} />)
 
   return (
@@ -48,7 +51,7 @@ function App() {
           <br />
           <InputField input={input} result={result} handleInput={handleInput} />
           <div className="grid grid-cols-5 w-full">
-            <div className="col-span-3 grid grid-cols-3 justify-items-center w-full ">
+            <div className="col-span-3 grid grid-cols-3 justify-items-stretch w-full ">
               {numBtn}
             </div>
             <div className="col-span-2 grid grid-cols-2 justify-items-end w-full ">
