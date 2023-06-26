@@ -34,13 +34,16 @@ function App() {
     numBtn.push(<InputButton id={i} txt={i} buttonHandler={buttonHandler} />)
   }
   numBtn.push(
-    <div></div>
+    <InputButton id="AC" txt="AC" buttonHandler={ac} />
   )
   numBtn.push(
     <InputButton id={0} txt={0} buttonHandler={buttonHandler} colSpan={1} />
   )
+  numBtn.push(
+    <InputButton id="DEL" txt="DEL" buttonHandler={del} />
+  )
 
-  const op = ["+", "-", "*", "/", ".", "%"]
+  const op = ["+", "-", "*", "/", ".", "%", "(", ")"]
   let opBtn = op.map(e => <InputButton id={e} txt={e} buttonHandler={buttonHandler} />)
 
   return (
@@ -56,8 +59,6 @@ function App() {
             </div>
             <div className="col-span-2 grid grid-cols-2 justify-items-end w-full ">
               {opBtn}
-              <InputButton id="AC" txt="AC" buttonHandler={ac} />
-              <InputButton id="DEL" txt="DEL" buttonHandler={del} />
             </div>
           </div>
         </div>
