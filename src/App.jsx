@@ -49,8 +49,8 @@ function App() {
   return (
     <>
       <div className="h-screen bg-gray-700 flex items-center justify-center">
-        <div className="bg-gray-800 rounded-lg max-w-md p-8 shadow-2xl">
-          <h1 className='text-white text-center text-5xl font-bold'>KALKULATOR</h1>
+        <div className="bg-gray-800 rounded-lg w-1/2 sm:max-w-md p-4 sm:p-8 shadow-xl sm:shadow-2xl">
+          <h1 className='text-white text-center text-3xl sm:text-5xl font-bold'>KALKULATOR</h1>
           <br />
           <InputField input={input} result={result} handleInput={handleInput} />
           <div className="grid grid-cols-5 w-full">
